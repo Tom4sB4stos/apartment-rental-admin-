@@ -1,24 +1,28 @@
 import Data from "../assets/data.json"
 import { Box, Image, Badge, Button} from '@chakra-ui/react'
 import {useState} from "react"
+import {Link} from "react-router-dom"
+import { Link as ChakraLink} from "@chakra-ui/react";
+
+
+
 
 
 function ApartmentList () {
 
     const [apartmentData, setApartmentData] = useState(Data)
 
-
     const deleteApartment = (id)=> {
-        console.log(id)
+       // console.log(id)
         const filteredApartment = apartmentData.filter( (apartment) => {
             return apartment.id !== id
             
         }
         )
         setApartmentData(filteredApartment)
-        console.log(filteredApartment)
+       // console.log(filteredApartment)
     }
-    
+
 return (
 
     Data.map((apartmentData) => {
@@ -68,8 +72,12 @@ return (
         </Box>
         <Box>
         <Box display="flex" direction="column">
-                <Button colorScheme='teal' height= "25px">Details</Button>
-                </Box>
+           
+        <ChakraLink as={Link} to={`/details/${apartmentData.id}`}>
+               <Button colorScheme='teal' height= "25px">Details</Button> 
+         </ChakraLink>
+         </Box>
+
              <Box>
                 <Button colorScheme='red' height= "25px" mt="10px" onClick={() => deleteApartment(apartmentData.id)}>Delete</Button>
             </Box>

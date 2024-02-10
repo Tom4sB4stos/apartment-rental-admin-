@@ -2,8 +2,6 @@ import { Flex, Box, Heading} from "@chakra-ui/react"
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { Link as ChakraLink } from '@chakra-ui/react'
 
-
-
 function NavBar() {
     return (
       <Flex
@@ -24,7 +22,8 @@ function NavBar() {
       <Flex alignItems="center">
       <ChakraLink as={ReactRouterLink} to='/about'mr="20px" color="white" _hover={{ textDecoration: 'none', color: 'gray.200' }}>About</ChakraLink>
       <ChakraLink as={ReactRouterLink} to='/' mr="20px" color="white" _hover={{ textDecoration: 'none', color: 'gray.200' }}>Home</ChakraLink>
-      <ChakraLink as={ReactRouterLink} to='#' color="white" _hover={{ textDecoration: 'none', color: 'gray.200' }}>Button 3</ChakraLink>
+      <ChakraLink as={ReactRouterLink} to="#"  color="white" _hover={{ textDecoration: 'none', color: 'gray.200' }}>Create</ChakraLink>
+      
       </Flex>
     </Flex>
   );
