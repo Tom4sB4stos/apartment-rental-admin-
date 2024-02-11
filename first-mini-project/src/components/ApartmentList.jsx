@@ -4,11 +4,11 @@ import {useState} from "react"
 import {Link} from "react-router-dom"
 import { Link as ChakraLink} from "@chakra-ui/react";
 
+import Sidebar from "./Sidebar";
 
 
 
-
-function ApartmentList () {
+function ApartmentList ({filterByCity}) {
 
     const [apartmentData, setApartmentData] = useState(Data)
 
@@ -30,7 +30,7 @@ return (
     return (
       
         
-        <Box key={apartmentData.id} maxW='md' width="300px" borderWidth='1px' borderRadius='lg' overflow='hidden' mt ="100px">
+        <Box key={apartmentData.id} maxW='md' ml="120px" width="250px" borderWidth='1px' borderRadius='lg' overflow='hidden' mt ="100px">
           <Image src={apartmentData.picture_url.url} />
 
           <Box p='6' display="flex" flexDirection="column" align="left">

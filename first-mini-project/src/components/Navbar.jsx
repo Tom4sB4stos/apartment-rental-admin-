@@ -1,8 +1,16 @@
-import { Flex, Box, Heading} from "@chakra-ui/react"
+import { Flex, Box, Heading, Button} from "@chakra-ui/react"
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { Link as ChakraLink } from '@chakra-ui/react'
+import {useState} from "react"
+import Sidebar from "./Sidebar"
 
 function NavBar() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+      setIsOpen(!isOpen);
+  }
     return (
       <Flex
       position="fixed"
@@ -16,8 +24,23 @@ function NavBar() {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box p="2">
-        <Heading size="md">Logo</Heading>
+      <Box p="2" display="flex" flexDirection="column">
+        <Box>
+        <Button
+        position="fixed"
+        top="2"
+        left="4"
+       
+        onClick={toggleSidebar}
+        colorScheme="teal"
+        
+      >
+        {isOpen ? "Close Sidebar" : "Open Sidebar"}
+      </Button>
+        <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+        </Box>
+       
+        <Heading size="md" ml="200px">Logo</Heading>
       </Box>
       <Flex alignItems="center">
       <ChakraLink as={ReactRouterLink} to='/about'mr="20px" color="white" _hover={{ textDecoration: 'none', color: 'gray.200' }}>About</ChakraLink>

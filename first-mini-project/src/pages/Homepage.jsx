@@ -8,9 +8,9 @@ function HomePage() {
   return (
     <div>
         <Form/>
-       <Wrap justify="space-evenly">
-   <ApartmentList/>
-   </Wrap>
+       <Wrap justify="space-evenly">                
+       <ApartmentList/>
+       </Wrap>
    
     </div>
   );
