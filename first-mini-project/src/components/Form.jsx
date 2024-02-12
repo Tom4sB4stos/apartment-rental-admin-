@@ -31,7 +31,7 @@ function Form (props) {
    const newApartment = { country, city/* , price, bedrooms, bathrooms, url  */};
    console.log(newApartment)
 
-   //props.addNewApartment(newApartment);
+   props.addNewApartment(newApartment);
   
    setCountry("");
    setCity("");

@@ -1,19 +1,25 @@
+import Data from "../assets/data.json"
+import { useState } from "react"
+import Form from "../components/Form"
+import ApartmentList from "../components/ApartmentList"
 
-import { Wrap} from '@chakra-ui/react'
 
-import UpdatedApartmentList from '../components/updatedApartmentList';
-import ApartmentList from "../components/ApartmentList";
-import Form from '../components/Form';
 function HomePage() {
-  return (
-    <div>
-        <Form/>
-       <Wrap justify="space-evenly">                
-       <ApartmentList/>
-       </Wrap>
-   
-    </div>
-  );
+  
+ const [apartment, setApartment] = useState(Data)
+
+ function addNewApartment(newApartment) {
+     const updatedList = [...apartment, newApartment]
+     setApartment(updatedList)
+ }
+
+    return (
+        <div>
+            <Form addNewApartment={addNewApartment} />
+           <ApartmentList />
+        </div>
+    )
+
 }
 
 export default HomePage;
