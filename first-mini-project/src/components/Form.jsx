@@ -14,6 +14,7 @@ import { Box,
        } from "@chakra-ui/react"
 
 import {useState} from "react"
+//import { Form} from "@chakra-ui/react";
 
 
 function Form (props) {
@@ -28,7 +29,7 @@ function Form (props) {
   
    e.preventDefault();
 
-   const newApartment = { country, city/* , price, bedrooms, bathrooms, url  */};
+   const newApartment = { country, city, /* , price, bedrooms, bathrooms, url  */};
    console.log(newApartment)
 
    props.addNewApartment(newApartment);

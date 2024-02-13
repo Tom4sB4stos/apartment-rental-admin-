@@ -13,10 +13,21 @@ function HomePage() {
      setApartment(updatedList)
  }
 
+ const deleteApartment = (id)=> {
+  console.log(id)
+  const filteredApartment = apartment.filter( (apartment) => {
+      return apartment.id !== id
+      
+  }
+  )
+  setApartment(filteredApartment)
+  console.log(filteredApartment)
+}
+
     return (
         <div>
             <Form addNewApartment={addNewApartment} />
-           <ApartmentList />
+           <ApartmentList apartment={apartment} deleteApartment= {deleteApartment} />
         </div>
     )
 
