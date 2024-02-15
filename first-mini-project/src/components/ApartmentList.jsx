@@ -77,6 +77,11 @@ function ApartmentList(props) {
                         Details
                       </Button>
                     </ChakraLink>
+                    <ChakraLink as={Link} to={`/editlist/${x.id}`}>
+                      <Button colorScheme="teal" height="25px">
+                        Edit
+                      </Button>
+                    </ChakraLink>
                   </Box>
 
                   <Box>
