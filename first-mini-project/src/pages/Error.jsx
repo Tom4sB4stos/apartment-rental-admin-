@@ -1,15 +1,17 @@
+import { Heading, Link, ButtonGroup, Button, Box } from "@chakra-ui/react";
 
+function Error() {
+  return (
+    <Box mt="300px" mb="200px">
+      <Heading size="md">Error 404 - Page Not Found</Heading>
 
-function Error () {
-    return (
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsa esse. Hic omnis blanditiis sequi adipisci odit voluptate quaerat doloremque inventore, temporibus ipsam quam ratione nostrum culpa, aut quisquam nesciunt.</p>
-            <p>Oops... this page doesnt exist</p>
-           
-        </div>
-     
-    )
-
+      <ButtonGroup spacing="2" mt="45px">
+        <Button variant="solid" colorScheme="teal">
+          Back to Home
+        </Button>
+      </ButtonGroup>
+    </Box>
+  );
 }
 
-export default Error
+export default Error;

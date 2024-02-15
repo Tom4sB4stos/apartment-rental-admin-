@@ -23,7 +23,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/details/:detailsId" element={<Details />} />
         <Route path="/madrid" element={<SortedByCity />} />
-        
 
         <Route path="*" element={<Error />} />
       </Routes>
