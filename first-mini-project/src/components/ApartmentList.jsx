@@ -25,7 +25,6 @@ function ApartmentList(props) {
             key={x.id}
             overflow="hidden"
             mt="100px"
-            onKeyUp={x.id}
           >
             <Box>
               {x.picture_url && x.picture_url.url && (

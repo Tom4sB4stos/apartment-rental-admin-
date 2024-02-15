@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
-import EditList from "./pages/EditList";
+
 import Error from "./pages/Error";
 import HomePage from "./pages/Homepage";
 import About from "./pages/About";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/details/:detailsId" element={<Details />} />
         <Route path="/madrid" element={<SortedByCity />} />
-        <Route path="/editlist/:id" element={<EditList />} />
+        
 
         <Route path="*" element={<Error />} />
       </Routes>

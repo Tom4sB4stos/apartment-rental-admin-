@@ -1,46 +1,44 @@
 import {
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  Heading,
-  Button,
-} from "@chakra-ui/react";
-import Data from "../assets/data.json";
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-//import { Form} from "@chakra-ui/react";
+    Box,
+    FormControl,
+    FormLabel,
+    Input,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper,
+    Heading,
+    Button,
+  } from "@chakra-ui/react";
 
-function EditList(props) {
-  const [data, setData] = useState({ name: "tomas", price: 10 });
-  /* const [price, setPrice] = useState("");
-   */
-  const { id } = useParams();
 
-  useEffect(() => {
-    setData(data);
-  }, []);
+import {useState} from "react"
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+function EditList ({name, price}) {
 
-  return (
+const [names, setNames] = useState("names")
+const [prices, setPrices] = useState(price)
+
+console.log(names)
+//console.log(price)
+
+const setInitial = () => {
+
+}
+
+return (
     <Box display="flex" flexDirection="column" alignItems="center" mt="100px">
       <Heading as="h3" size="lg">
         Edit Current Apartment
       </Heading>
-      <form onSubmit={handleSubmit}>
+      <form >
         <FormControl isRequired>
           <FormLabel>Name</FormLabel>
           <Input
             placeholder="Name"
             name="name"
+            defaultValue={name}
             /* value={data.name} */
             /*  onChange={(e) => setCountry(e.target.value)} */
           />
@@ -50,6 +48,7 @@ function EditList(props) {
             max={5000}
             min={30}
             name="price"
+            defaultValue={price}
             /*  value={data.price} */
             /* onChange={(e) => setPrice(e.target.value)} */
           >
@@ -67,6 +66,7 @@ function EditList(props) {
       </form>
     </Box>
   );
+
 }
 
-export default EditList;
+export default EditList

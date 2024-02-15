@@ -2,14 +2,17 @@ import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Data from "../assets/data.json";
 import { Box, Image, Heading, Badge, Flex } from "@chakra-ui/react";
+import EditList from "../components/EditList"
 
 function Details() {
   const { detailsId } = useParams();
 
   const apartmentDetail = Data.find((apartment) => apartment.id === detailsId);
 
+
   return (
     <article>
+      <EditList name ={apartmentDetail.name} price={apartmentDetail.price}/>
       {/* IMAGE */}
       <Box
         display="flex"
