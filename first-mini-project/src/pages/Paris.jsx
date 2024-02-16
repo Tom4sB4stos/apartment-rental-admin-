@@ -4,15 +4,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as ChakraLink } from "@chakra-ui/react";
 
-function Madrid({}) {
+function Paris({}) {
   const [apartmentData, setApartmentData] = useState(Data);
 
-  const madridApartments = apartmentData.filter(
-    (apartment) => apartment.city === "Madrid"
+  const parisApartments = apartmentData.filter(
+    (apartment) => apartment.city === "Paris"
   );
   return (
     <Wrap>
-      {madridApartments.map((apartmentData) => {
+      {parisApartments.map((apartmentData) => {
         return (
           <WrapItem key={apartmentData.id}>
             <Box
@@ -96,4 +96,4 @@ function Madrid({}) {
   );
 }
 
-export default Madrid;
+export default Paris;

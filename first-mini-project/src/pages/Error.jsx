@@ -6,9 +6,11 @@ function Error() {
       <Heading size="md">Error 404 - Page Not Found</Heading>
 
       <ButtonGroup spacing="2" mt="45px">
-        <Button variant="solid" colorScheme="teal">
-          Back to Home
-        </Button>
+        <Link href="/">
+          <Button variant="solid" colorScheme="teal">
+            Back to Home
+          </Button>
+        </Link>
       </ButtonGroup>
     </Box>
   );

@@ -11,6 +11,7 @@ import {
   Box,
   Image,
   Center,
+  Link,
 } from "@chakra-ui/react";
 
 function About() {
@@ -38,12 +39,16 @@ function About() {
           <Divider />
           <CardFooter display="flex" justifyContent="center">
             <ButtonGroup spacing="2">
-              <Button variant="solid" colorScheme="teal">
-                GitHub
-              </Button>
-              <Button variant="ghost" colorScheme="teal">
-                Linkedin
-              </Button>
+              <Link href="https://github.com/piyush13101994">
+                <Button variant="solid" colorScheme="teal">
+                  GitHub
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/piyush-bisht-7b3658299/">
+                <Button variant="ghost" colorScheme="teal">
+                  Linkedin
+                </Button>
+              </Link>
             </ButtonGroup>
           </CardFooter>
         </Card>
@@ -74,12 +79,16 @@ function About() {
           <Divider />
           <CardFooter display="flex" justifyContent="center">
             <ButtonGroup spacing="2">
-              <Button variant="solid" colorScheme="teal">
-                GitHub
-              </Button>
-              <Button variant="ghost" colorScheme="teal">
-                Linkedin
-              </Button>
+              <Link href="https://github.com/Tom4sB4stos">
+                <Button variant="solid" colorScheme="teal">
+                  GitHub
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/tom%C3%A1s-bastos-3aa674136/">
+                <Button variant="ghost" colorScheme="teal">
+                  Linkedin
+                </Button>
+              </Link>
             </ButtonGroup>
           </CardFooter>
         </Card>

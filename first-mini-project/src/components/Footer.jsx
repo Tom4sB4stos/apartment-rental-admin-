@@ -1,4 +1,4 @@
-import { Flex, Box, VStack } from "@chakra-ui/react";
+import { Flex, Box, VStack, Link } from "@chakra-ui/react";
 
 function Footer() {
   return (
@@ -18,9 +18,9 @@ function Footer() {
           backgroundColor="teal"
           mb="0"
         >
-          <a href="github.com">
+          <Link href="https://github.com/Tom4sB4stos/apartment-rental-admin-">
             <b>G I T H U B</b>
-          </a>
+          </Link>
         </Box>
       </Box>
     </footer>
