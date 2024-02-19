@@ -3,16 +3,29 @@ import { useParams } from "react-router-dom";
 import Data from "../assets/data.json";
 import { Box, Image, Heading, Badge, Flex } from "@chakra-ui/react";
 import EditList from "../components/EditList"
+import {useState} from "react"
 
 function Details() {
   const { detailsId } = useParams();
 
   const apartmentDetail = Data.find((apartment) => apartment.id === detailsId);
 
+ 
+
+  const handleFormSubmit = (updatedData) => {
+   
+    setData(updatedData);
+    console.log(updatedData);
+  };
+
+  const [data, setData] = useState({
+    name: apartmentDetail.name,
+    price: apartmentDetail.price,
+  })
 
   return (
     <article>
-      <EditList name ={apartmentDetail.name} price={apartmentDetail.price}/>
+      <EditList name ={apartmentDetail.name} price={apartmentDetail.price} onSubmit={handleFormSubmit}/>
       {/* IMAGE */}
       <Box
         display="flex"
@@ -26,7 +39,7 @@ function Details() {
       {/* TITLE */}
       <Box display="flex" justifyContent="center" mt="35px" fontSize="m">
         <Heading as="h1" width="720px" color="#555">
-          {apartmentDetail.name}
+          {data.name}
         </Heading>
       </Box>
       {/* CITY */}
@@ -65,11 +78,11 @@ function Details() {
             height="30px"
             margin="0 auto"
           >
-            {apartmentDetail.price <= 80 ? "Great Deal" : null}
-            {apartmentDetail.price > 80 && apartmentDetail.price < 120
+            {data.price <= 80 ? "Great Deal" : null}
+            {data.price > 80 && data.price < 120
               ? "Good Find"
               : null}
-            {apartmentDetail.price >= 120 ? "Premium" : null}
+            {data.price >= 120 ? "Premium" : null}
           </Badge>
           <p>
             {apartmentDetail.bedrooms} bed &bull; {apartmentDetail.bathrooms}{" "}
@@ -81,7 +94,7 @@ function Details() {
       {/* PRICE */}
       <Box display="flex" justifyContent="center" mt="15px" fontSize="m">
         <Heading as="h3" width="720px" color="#555" fontSize="22px">
-          {apartmentDetail.price} € / week
+          {data.price} € / week
         </Heading>
       </Box>
 

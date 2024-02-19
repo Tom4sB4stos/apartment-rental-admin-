@@ -12,12 +12,12 @@ function HomePage() {
   }
 
   const deleteApartment = (id) => {
-    console.log(id);
+   // console.log(id);
     const filteredApartment = apartment.filter((apartment) => {
       return apartment.id !== id;
     });
     setApartment(filteredApartment);
-    console.log(filteredApartment);
+   // console.log(filteredApartment);
   };
 
   return (

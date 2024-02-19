@@ -15,54 +15,50 @@ import {
 
 import {useState} from "react"
 
-function EditList ({name, price}) {
+function EditList ({name, price, onSubmit}) {
 
-const [names, setNames] = useState("names")
-const [prices, setPrices] = useState(price)
+    const [updatedName, setUpdatedName] = useState(name);
+    const [updatedPrice, setUpdatedPrice] = useState(price);
+  
 
-console.log(names)
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const updatedData = {
+    name: updatedName,
+    price: parseFloat(updatedPrice),
+  };
+  onSubmit(updatedData);
+};
 //console.log(price)
 
-const setInitial = () => {
 
-}
 
 return (
     <Box display="flex" flexDirection="column" alignItems="center" mt="100px">
-      <Heading as="h3" size="lg">
-        Edit Current Apartment
-      </Heading>
-      <form >
-        <FormControl isRequired>
-          <FormLabel>Name</FormLabel>
-          <Input
-            placeholder="Name"
-            name="name"
-            defaultValue={name}
-            /* value={data.name} */
-            /*  onChange={(e) => setCountry(e.target.value)} */
-          />
+        <form onSubmit={handleSubmit}>
+      <FormControl isRequired >
+        <FormLabel>Name</FormLabel>
+        <Input
+          placeholder="Name"
+          name="name"
+          value={updatedName}
+          onChange={(e) => setUpdatedName(e.target.value)}
+        />
 
-          <FormLabel>Price</FormLabel>
-          <NumberInput
-            max={5000}
-            min={30}
-            name="price"
-            defaultValue={price}
-            /*  value={data.price} */
-            /* onChange={(e) => setPrice(e.target.value)} */
-          >
-            <NumberInputField />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
+        <FormLabel>Price</FormLabel>
+        <Input
+          type="number"
+          max={5000}
+          min={30}
+          name="price"
+          value={updatedPrice}
+          onChange={(e) => setUpdatedPrice(e.target.value)}
+        />
 
-          <Button type="submit" mt="30px" colorScheme="green">
-            Submit
-          </Button>
-        </FormControl>
+        <Button type="submit" mt="30px" colorScheme="green" >
+          Submit
+        </Button>
+      </FormControl>
       </form>
     </Box>
   );
